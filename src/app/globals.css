@@ -1,19 +1,19 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f1f1f0;
+  --foreground: rgb(38,37,37);
+  --box-backgroud: #392F1E17;
+  --link-color: #333;
+  --link-underline-color: #D7A765;
+  --lang-div-background-color: rgba(17, 17, 17, 0.1);
+  --land-text-color: rgba(17, 17, 17, 0.8);
+  --dot: rgba(225, 173, 100, 1);
 }
 
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
+  height: 100vh
 }
 
 body {
@@ -22,11 +22,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
+  padding: 0.5rem;
   margin: 0;
 }
 
@@ -35,8 +38,23 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+nextjs-portal,
+next-route-announcer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
+
+.parent {
+  display: flex;
+  justify-content: center;
+  margin-top: -3rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
