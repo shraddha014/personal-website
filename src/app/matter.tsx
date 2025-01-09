@@ -36,17 +36,18 @@ export default function Comp() {
     Render.run(render);
 
     return () => {
+      const currentEngine = engineRef.current; // Local variable for cleanup
       Runner.stop(runner);
       Render.stop(render);
-      World.clear(engineRef.current.world, false);
-      Engine.clear(engineRef.current);
+      World.clear(currentEngine.world, false);
+      Engine.clear(currentEngine);
 
       if (render.canvas) {
         render.canvas.remove();
       }
-      // @ts-expect-error
+      // @ts-expect-error: Matter.js assigns null to cleanup canvas internally.
       render.canvas = null;
-      // @ts-expect-error
+      // @ts-expect-error: Matter.js uses custom context management not recognized by TypeScript.
       render.context = null;
       render.textures = {};
     };
