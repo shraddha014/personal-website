@@ -1,4 +1,4 @@
-import { neue } from "../layout";
+import { neue } from "@/utils/fontConfig";
 import styles from "./projects.module.css";
 
 interface projectItem {

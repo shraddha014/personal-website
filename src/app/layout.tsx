@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./header";
-import localFont from 'next/font/local'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,11 +18,6 @@ export const metadata: Metadata = {
   description: "Shraddha's personal Website",
   icons: "/favicon.ico"
 };
-
-export const neue = localFont({src: [{
-  path: '../../public/fonts/Neue-Montreal/OTF/PPNeueMontreal-Book.otf',
-  weight: '400',
-}]})
 
 export default function RootLayout({
   children,
