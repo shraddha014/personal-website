@@ -44,7 +44,7 @@ export default function Projects() {
       </span>
       <div className={styles.container}>
         {projectItems.map((item, idx) => (
-          <div
+          <div key={`project-${idx}`}
             className={styles.content}
             style={{
               backgroundImage: `url(${item.backgroundImage})`,
@@ -56,7 +56,7 @@ export default function Projects() {
             <div>
               <div>
                 {item.languageUsed.map((lang, index) => (
-                  <div className={styles.langContainer}>{lang}</div>
+                  <div key={`lang-${idx}-${index}`} className={styles.langContainer}>{lang}</div>
                 ))}
               </div>
             </div>

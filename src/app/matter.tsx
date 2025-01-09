@@ -44,9 +44,9 @@ export default function Comp() {
       if (render.canvas) {
         render.canvas.remove();
       }
-      // @ts-ignore
+      // @ts-expect-error
       render.canvas = null;
-      // @ts-ignore
+      // @ts-expect-error
       render.context = null;
       render.textures = {};
     };
