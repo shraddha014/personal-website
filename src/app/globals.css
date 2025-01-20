@@ -51,10 +51,18 @@ next-route-announcer {
   display: flex;
   justify-content: center;
   margin-top: -3rem;
+  overflow: auto;
 }
 
 .footer {
   display: flex;
   justify-content: center;
+  color: rgba(17, 17, 17, 0.6);
+}
+.footer span {
+  padding: 0;
+  white-space: normal;
+  font-weight: 500;
+  color: rgba(17, 17, 17, 1);
 }
 

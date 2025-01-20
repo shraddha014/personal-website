@@ -11,10 +11,11 @@
 }
 
 .links{
-    text-decoration: none;
+    font-family: Rubik;
+    font-weight: 400;
     color: var(--link-color);
     margin: 0 1rem;
-    opacity: 80%;
+    opacity: 70%;
 }
 
 .links:hover {

@@ -7,39 +7,46 @@ interface projectItem {
   description: string;
   languageUsed: string[];
   backgroundImage: string;
+  showLink: boolean;
 }
 
 const projectItems: projectItem[] = [
   {
-    heading: "Hook'em Hardware",
-    link: "",
+    heading: "Pretty Wiki",
+    link: "https://github.com/hi-mark/pretty-wiki",
     description:
-      "As the Product Manager for this project, I led the development of a web application for hardware resource management, using ReactJs, Python, and MongoDB.",
-    languageUsed: ["react", "angular", "java", "sql"],
+      `Implementing customizable themes, font styles, and layout optimizations 
+      to enhance Wikipedia's content readability and aesthetic appeal.`,
+    languageUsed: ["Typescript", "HTML", "CSS"],
     backgroundImage: "/assests/one.png",
+    showLink: true
   },
   {
     heading: "Hook'em Hardware",
-    link: "",
+    link: "https://github.com/shraddha014/hook-em-hardware-be",
     description:
-      "As the Product Manager for this project, I led the development of a web application for hardware resource management, using ReactJs, Python, and MongoDB.",
-    languageUsed: ["react", "angular", "java", "sql"],
+      `Led a team of 4 in developing a web application to check hardware availability. 
+      Created and managed GitHub issues to track progress and ensure timely delivery of milestones.`,
+    languageUsed: ["React", "Python", "MongoDb", "Heroku"],
     backgroundImage: "/assests/two.png",
+    showLink: true
   },
   {
-    heading: "Hook'em Hardware",
+    heading: "Aircraft Communications Addressing and Reporting System",
     link: "",
     description:
-      "As the Product Manager for this project, I led the development of a web application for hardware resource management, using ReactJs, Python, and MongoDB.",
-    languageUsed: ["react", "angular", "java", "sql"],
+      `Developed a web-based communication gateway between ground stations and pilots, 
+      enabling efficient data exchange and real-time communication.`,
+    languageUsed: ["Angular", "Java", "Spring Boot", "OracleDb"],
     backgroundImage: "/assests/three.png",
+    showLink: false
   },
 ];
 
 export default function Projects() {
   return (
-    <div className={styles.main}>
-      <span className={`${neue.className} ${styles.pageTitle}`}>projects
+    <div className={`${neue.className} ${styles.main}`}>
+      <span className={styles.pageTitle}>projects
         <span className={styles.dot}>.</span>
       </span>
       <div className={styles.container}>
@@ -51,8 +58,11 @@ export default function Projects() {
               backgroundPosition: `bottom 0 right ${idx==0?"5%":"0"}`,
             }}
           >
-            <div>{item.heading}</div>
-            <div>{item.description}</div>
+            <div className={styles.topSection}>
+              <div className={styles.heading}>{item.heading}</div>
+              {item.showLink && <a href={item.link} target="_blank" rel="noopener noreferrer"><img src="/assests/redirect.svg" alt="" /></a>}
+            </div>
+            <div className={styles.description}>{item.description}</div>
             <div>
               <div>
                 {item.languageUsed.map((lang, index) => (

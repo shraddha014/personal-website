@@ -8,7 +8,6 @@
     display: flex;
     gap: 1.5rem;
     max-width: 1000px;
-    height: 390px;
 }
 
 .content {
@@ -19,6 +18,8 @@
     justify-content: space-between;
     background-repeat: no-repeat;
     background-size: auto 28.4%;
+    flex: 1;
+    gap: 1.4rem;
 }
 
 .pageTitle{
@@ -42,6 +43,22 @@
     margin: 3px;
     font-weight: 500;
     border: 1px solid var(--box-backgroud);
+}
+
+.heading {
+    color: rgba(17, 17, 17, 1);
+    font-weight: 600;
+}
+
+.description {
+    color: rgba(17, 17, 17, 0.9);
+    font-weight: 400;
+}
+
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
