@@ -11,11 +11,11 @@
 }
 
 .links{
-    font-family: Rubik;
     font-weight: 400;
     color: var(--link-color);
     margin: 0 1rem;
     opacity: 70%;
+    font-size: calc(0.5em + 0.7vw);
 }
 
 .links:hover {
@@ -44,4 +44,13 @@
 .active:hover::after {
     width: 60%;        
     transition: width 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .menu {
+      width: 100%;
+    }
+    .links {
+        margin: 0;
+    }
 }

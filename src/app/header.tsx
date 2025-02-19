@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./header.module.css";
 import { usePathname } from "next/navigation";
+import { neue } from "@/utils/fontConfig";
 
 
 
@@ -27,31 +28,31 @@ export default function Header() {
       >
         <Link
           href="/"
-          
+          className={`${getLinkClassName('/')}  ${neue.className}`}
         >
-          <div className={getLinkClassName('/')}>About</div>
+          About
         </Link>
         <Link
           href="/experience"
-          className={getLinkClassName('/experience')}
+          className={`${getLinkClassName('/experience')}  ${neue.className}`}
         >
           Experience
         </Link>
         <Link
           href="/education"
-          className={getLinkClassName('/education')}
+          className={`${getLinkClassName('/education')}  ${neue.className}`}
         >
           Education
         </Link>
         <Link
           href="/projects"
-          className={getLinkClassName('/projects')}
+          className={`${getLinkClassName('/projects')}  ${neue.className}`}
         >
           Projects
         </Link>
         <Link
           href="/skills"
-          className={getLinkClassName('/skills')}
+          className={`${getLinkClassName('/skills')}  ${neue.className}`}
         >
           Skills
         </Link>

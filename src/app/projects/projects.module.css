@@ -48,11 +48,13 @@
 .heading {
     color: rgba(17, 17, 17, 1);
     font-weight: 600;
+    font-size: calc(0.7em + 0.7vw);
 }
 
 .description {
     color: rgba(17, 17, 17, 0.9);
     font-weight: 400;
+    font-size: calc(0.7em + 0.5vw);
 }
 
 .topSection {
