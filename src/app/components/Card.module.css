@@ -1,0 +1,19 @@
+.motionContainer {
+  width: calc(10em + 15vw);
+    height: calc(15vh + 25em);
+    background: content-box;
+    background-size: cover, contain;
+    background-position: center, bottom;
+    border-radius: 12px;
+}
+
+.langContainer {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--lang-div-background-color);
+  color: var(--land-text-color);
+  border-radius: 9999px;
+  margin: 3px;
+  font-weight: 500;
+  border: 1px solid var(--box-backgroud);
+}
