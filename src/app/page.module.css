@@ -7,10 +7,10 @@
 }
 
 .groupedImage {
-  width:108vw;
+  width: 108vw;
   position: absolute;
   left: -4%;
-  bottom:0%;
+  bottom: 0%;
 }
 
 .mainHeading {
@@ -22,11 +22,10 @@
 }
 
 .headingContainer {
-  display: flex
-;
-    justify-content: center;
-    flex: 1;
-    gap: 10rem;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 10rem;
 }
 
 .name {
@@ -40,8 +39,8 @@
   max-width: 30rem;
   font-size: calc(1em + 1vw);
   font-weight: 500;
-    line-height: normal;
-    width: 100%;
+  line-height: normal;
+  width: 100%;
 }
 
 .dot {
@@ -62,6 +61,36 @@
 .nameSecondPara {
   padding-top: 0px;
   margin-top: -12px;
+}
+
+.aboutImageOne,
+.aboutImageTwo,
+.aboutImageThree {
+  height: auto;
+  position: fixed;
+  bottom: 7vh;
+}
+
+.aboutImageOne {
+  width: 39.2vw;
+
+  z-index: 1;
+  left: -3.8vw;
+  transform: rotate(8.4deg);
+}
+
+.aboutImageTwo {
+  width: 43vw;
+  z-index: 3;
+  bottom: 5.8vh;
+  left: 28.5vw;
+  transform: rotate(-6.9deg);
+}
+.aboutImageThree {
+  width: 38vw;
+  z-index: 2;
+  right: -3vw;
+  transform: rotate(+6.3deg);
 }
 
 @media (max-width: 768px) {
