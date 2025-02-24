@@ -28,10 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${neue.className}`}>
-        <Header />
-        <div className="parent">{children}</div>
-        <div className="footer">
-          Built with&nbsp;<span>React</span>&nbsp;by&nbsp;<span>Shraddha</span>
+        <div className="main">
+          <Header />
+          <div className="mainContainer">{children}</div>
+          <div className="footer">
+            Built with&nbsp;<span>React</span>&nbsp;by&nbsp;<span>Shraddha</span>
+          </div>
         </div>
       </body>
     </html>
