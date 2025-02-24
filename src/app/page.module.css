@@ -72,24 +72,30 @@
 }
 
 .aboutImageOne {
-  width: 39.2vw;
+  width: calc(26.45vw + 27vh);
+  /* width: 39.2vw; */
 
   z-index: 1;
-  left: -3.8vw;
+  left: calc(-3.8vw + (900px - 100vh) * 0.2 - (1920px - 100vw) * 0.1);
   transform: rotate(8.4deg);
 }
 
 .aboutImageTwo {
-  width: 43vw;
+  width: calc(30.25vw + 27vh);
+  /* width: 43vw; */
+
   z-index: 3;
   bottom: 5.8vh;
-  left: 28.5vw;
+  left: calc(28.5vw+ (900px - 100vh) * 0.1);
   transform: rotate(-6.9deg);
+  /* transform: rotate(calc(-6.9deg + (900px - 100vh) * 0.05deg)); */
 }
+
 .aboutImageThree {
-  width: 38vw;
+  width: calc(25.25vw + 27vh);
+  /* width: 38vw; */
   z-index: 2;
-  right: -3vw;
+  right: calc(-3vw + (900px - 100vh) * 0.2 - (1920px - 100vw) * 0.1);
   transform: rotate(+6.3deg);
 }
 
