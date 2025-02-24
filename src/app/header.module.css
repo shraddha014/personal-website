@@ -2,6 +2,7 @@
     display: flex;
     /* height: 8vh; */
     margin: 0 auto;
+    z-index: 1;
     max-width: 100%;
     background-color: var(--box-backgroud);
     align-items: center;
