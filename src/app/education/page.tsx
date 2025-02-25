@@ -8,7 +8,7 @@ export default function Education() {
         <>
         <Card frontContent={{
             name: "University of Texas at Austin",
-            firstImage: '/assests/ut-pic.jpg',
+            firstImage: '/assests/ut_overlay1.svg',
             secondImage: '/assests/vit-pic.jpg'
         }} backContent={{
             relatedCourse: ['Advanced Programming & App Development', 'Design Methods', 'Product Management', 
