@@ -1,11 +1,36 @@
 .motionContainer {
-  width: calc(10em + 15vw);
-    height: calc(15vh + 25em);
-    background: content-box;
-    background-size: cover, contain;
-    background-position: center, bottom;
-    border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  line-height: 1rem;
 }
+
+.conatinerSize {
+  width: calc(10em + 15vw);
+  height: calc(15vh + 25em);
+  border-radius: 12px;
+}
+
+.background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
 
 .langContainer {
   display: inline-block;
@@ -16,4 +41,20 @@
   margin: 3px;
   font-weight: 500;
   border: 1px solid var(--box-backgroud);
+}
+
+.uniName {
+  color: var(--education-name-heading);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.courseName {
+  color: var(--education-name-subheading);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  
 }

@@ -3,6 +3,7 @@ import styles from './Card.module.css'
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { neue } from '@/utils/fontConfig';
 
 
 interface CardProps {
@@ -28,13 +29,15 @@ const Card: React.FC<CardProps> = ({ frontContent, backContent }) => {
           style={{ perspective: "1000px" }}
         >
           {!flipped ? (
-            <div className={styles.motionContainer} style={{backgroundImage: `url(${frontContent.firstImage}), url(${frontContent.secondImage})`}}>
-              <h2 className="">{frontContent.name}</h2>
-              <p className="">{backContent.courseName}</p>
+            <div className={`${styles.background} ${styles.conatinerSize}`} style={{backgroundImage: `url(${frontContent.firstImage})`}}>
+              <div className={`${styles.motionContainer} ${styles.overlay} ${neue.className}`} style={{backgroundImage: `url(${frontContent.secondImage})`}}>
+                <p className={styles.uniName}>{frontContent.name}</p>
+                <p className={styles.courseName}>{backContent.courseName}</p>
+              </div>
             </div>
           ) : (
-            <div className={styles.motionContainer} style={{backgroundColor:'pink', transform: "rotateY(180deg)"}}>
-              <h3 className="">{backContent.courseName}</h3>
+            <div className={`${styles.conatinerSize} ${neue.className}`} style={{backgroundColor:'pink', transform: "rotateY(180deg)"}}>
+              <p className="">{backContent.courseName}</p>
               {backContent.relatedCourse.map((lang, index) => (
                   <div key={`lang-${index}`} className={styles.langContainer}>{lang}</div>
                 ))}

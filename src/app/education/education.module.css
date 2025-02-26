@@ -1,0 +1,10 @@
+.conatiner {
+    display: flex;
+    gap: 2rem;
+}
+
+@media (max-width: 568px) {
+    .conatiner {
+        flex-direction: column;
+    }
+}
