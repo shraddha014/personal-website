@@ -8,6 +8,8 @@
   --land-text-color: rgba(17, 17, 17, 0.8);
   --dot: rgba(225, 173, 100, 1);
   --about-me-hey: rgba(38, 37, 37, 0.7);
+  --education-name-heading: rgba(255, 255, 255, 1);
+  --education-name-subheading: rgba(255, 255, 255, 0.85);
 }
 
 html,
