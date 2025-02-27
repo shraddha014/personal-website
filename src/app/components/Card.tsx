@@ -14,7 +14,8 @@ interface CardProps {
   },
   backContent: {
     relatedCourse: string[],
-    courseName: string
+    courseName: string,
+    backgroundcolor: string
   }
 }
 
@@ -36,11 +37,13 @@ const Card: React.FC<CardProps> = ({ frontContent, backContent }) => {
               </div>
             </div>
           ) : (
-            <div className={`${styles.conatinerSize} ${neue.className}`} style={{backgroundColor:'pink', transform: "rotateY(180deg)"}}>
-              <p className="">{backContent.courseName}</p>
-              {backContent.relatedCourse.map((lang, index) => (
-                  <div key={`lang-${index}`} className={styles.langContainer}>{lang}</div>
-                ))}
+            <div className={`${styles.conatinerSize} ${neue.className} ${styles.backContent}`} style={{backgroundColor:backContent.backgroundcolor, transform: "rotateY(180deg)"}}>
+              <p className={styles.courseName} style={{color: '#FFFF'}}>{backContent.courseName}</p>
+              <div>
+                {backContent.relatedCourse.map((lang, index) => (
+                    <div key={`lang-${index}`} className={styles.langContainer}>{lang}</div>
+                  ))}
+              </div>
             </div>
           )}
         </motion.div>
