@@ -8,7 +8,10 @@ import { neue } from "@/utils/fontConfig";
 // Define props type
 interface LanguageColor {
   name: string;
-  color: string;
+  x: number;
+  y: number;
+  excessiveWidth: number;
+  height: number;
 }
 
 interface TagSimulationProps {
@@ -18,7 +21,6 @@ interface TagSimulationProps {
 function TagSimulation({ languages }: TagSimulationProps) {
   const sceneRef = useRef<HTMLDivElement | null>(null);
   const engineRef = useRef(Engine.create());
-  const [positions, setPositions] = useState<{ x: number; y: number; width: number; height: number }[]>([]);
   const text = "Software Developer Skills!!!!";
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -74,45 +76,7 @@ function TagSimulation({ languages }: TagSimulationProps) {
         background: '#f1f1f0'
       },
     });
-
-    // Create language divs as physics objects
-    // const languageBodies = languages.map((lang, index) => {
-    //   const width = 200; // Fixed width
-    //   const height = 100; // Fixed height
-    //   const xPos = Math.random() * 600 + 100; // Random X position
-    //   const yPos = 50 + Math.random() * 50; // Random starting height
-    //   const body = Bodies.rectangle(xPos, yPos, width, height, {
-    //     restitution: 0.8,
-    //     friction: 0.5,
-    //     render: { visible: false }, // Hide default physics body
-    //   });
-
-      const getBodySize = () => {
-        if (width < 786) {
-          return { width: 100, height: 50 }; // Smaller sizes for mobile
-        } else {
-          return { width: 200, height: 100 }; // Medium sizes for tablets
-        }
-      };
     
-      let { width: bodyWidth, height: bodyHeight } = getBodySize();
-    
-      const languageBodies = languages.map((lang) => {
-        const xPos = Math.random() * 600 + 100;
-        const yPos = 50 + Math.random() * 50;
-        const body = Bodies.rectangle(xPos, yPos, bodyWidth, bodyHeight, {
-          restitution: 0.8,
-          friction: 0.5,
-          render: { visible: false },
-        });
-
-      // Apply a small force to spread them apart
-      Body.applyForce(body, body.position, { x: (Math.random() - 0.5) * 0.02, y: 0 });
-
-      return { body, bodyWidth, bodyHeight };
-    });
-
-    // Add a MouseConstraint to allow dragging
     const mouse = Mouse.create(render.canvas);
     const mouseConstraint = MouseConstraint.create(engine, {
       mouse: mouse,
@@ -121,34 +85,38 @@ function TagSimulation({ languages }: TagSimulationProps) {
         render: { visible: false },
       },
     });
+    var containerElement = document.querySelector(".tag-canvas");
+    var radius = 20;
 
-    const ground = Bodies.rectangle(width / 2, height - 85, width, 1, { isStatic: true, friction: 10 });
+    var rectangles = []
+    
+    for (let i = 0; i < languages.length; i++) {
+      const language = languages[i]
+      const tagWhitelevel = Bodies.rectangle(width / 2 - language.x, language.y, language.excessiveWidth, language.height, {
+          chamfer: { radius: radius },
+          render: {
+              sprite: {
+                  texture: language.name,
+                  xScale: 1,
+                  yScale: 1
+              }
+          }
+      });
+  
+      rectangles.push(tagWhitelevel);
+  }
+
+    const ground = Bodies.rectangle(width / 2, height - 105, width, 1, { isStatic: true, friction: 10 });
     const rightWall = Bodies.rectangle(width+10, height/2, 20, height, { isStatic: true, friction: 10 })
     const leftWall = Bodies.rectangle(-12, height/2, 20, height, { isStatic: true, friction: 10 })
 
     // Add all objects to the physics world
-    World.add(engine.world, [...languageBodies.map((b) => b.body), ground, rightWall, leftWall, mouseConstraint]);
+    World.add(engine.world, [...rectangles, ground, rightWall, leftWall, mouseConstraint]);
 
     // Run engine and renderer
     const runner = Runner.create();
     Runner.run(runner, engine);
     Render.run(render);
-
-    // Update state to track div positions
-    const updatePositions = () => {
-      setPositions(
-        languageBodies.map((b) => ({
-          x: b.body.position.x,
-          y: b.body.position.y,
-          width: b.bodyWidth,
-          height: b.bodyHeight,
-        }))
-      );
-      requestAnimationFrame(updatePositions);
-    };
-    updatePositions();
-
-    // Cleanup on unmount
     return () => {
       Render.stop(render);
       World.clear(engine.world, false);
@@ -162,34 +130,7 @@ function TagSimulation({ languages }: TagSimulationProps) {
       <div style={{fontWeight: 800}} className={`${styles.centerDiv} ${neue.className}}`}>
         {displayText}
       </div>
-      {/* Matter.js simulation container */}
       <div ref={sceneRef} className={styles.simulationContainer} />
-
-      {/* Language divs positioned using physics */}
-      {positions.map((pos, index) => (
-        <div
-          key={`lang-${index}`}
-          className={styles.langContainer}
-          style={{
-            position: "absolute",
-            left: `${pos.x}px`,
-            top: `${pos.y}px`,
-            width: `${pos.width}px`,
-            height: `${pos.height}px`,
-            transform: "translate(-50%, -50%)",
-            backgroundColor: languages[index].color, // Assign unique color from prop
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "grab",
-            borderRadius: '999px',
-            pointerEvents: 'none',
-            fontSize: window.innerWidth < 768 ? '1rem' : '2rem'
-          }}
-        >
-          {languages[index].name}
-        </div>
-      ))}
     </div>
   );
 }
