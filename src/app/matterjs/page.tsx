@@ -85,9 +85,9 @@ function TagSimulation({ languages }: TagSimulationProps) {
         render: { visible: false },
       },
     });
-    let radius = 20;
+    const radius = 20;
 
-    let rectangles = []
+    const rectangles = []
     
     for (let i = 0; i < languages.length; i++) {
       const language = languages[i]
