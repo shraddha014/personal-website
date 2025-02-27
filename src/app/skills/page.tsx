@@ -1,5 +1,4 @@
 import TagSimulation from "../matterjs/page";
-import styles from "./skills.module.css"
 
 export default function Skills() { 
     // const languages: string[] = ["JavaScript", "Python", "C++", "Go", "Rust", "TypeScript"];

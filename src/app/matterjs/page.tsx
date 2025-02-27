@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Engine, Render, World, Bodies, Runner, Body, Mouse, MouseConstraint } from "matter-js";
+import { Engine, Render, World, Bodies, Runner, Mouse, MouseConstraint } from "matter-js";
 import styles from "./skillseffect.module.css";
 import { neue } from "@/utils/fontConfig";
 
@@ -85,10 +85,9 @@ function TagSimulation({ languages }: TagSimulationProps) {
         render: { visible: false },
       },
     });
-    var containerElement = document.querySelector(".tag-canvas");
-    var radius = 20;
+    let radius = 20;
 
-    var rectangles = []
+    let rectangles = []
     
     for (let i = 0; i < languages.length; i++) {
       const language = languages[i]
@@ -123,7 +122,7 @@ function TagSimulation({ languages }: TagSimulationProps) {
       Engine.clear(engine);
       render.canvas.remove();
     };
-  }, [languages]);
+  }, []);
 
   return (
     <div className={styles.container}>
