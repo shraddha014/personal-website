@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 
 :root {
@@ -15,6 +13,8 @@
   --about-me-hey: rgba(38, 37, 37, 0.7);
   --education-name-heading: rgba(255, 255, 255, 1);
   --education-name-subheading: rgba(255, 255, 255, 0.85);
+  --pure-white: #ffffff;
+  --blackish-grey: #3d3d3d;
 }
 
 * {
@@ -39,6 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 3rem;
   height: 100vh !important;
 }
 
@@ -81,4 +82,10 @@ next-route-announcer {
   white-space: normal;
   font-weight: 500;
   color: rgba(17, 17, 17, 1);
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+      flex-direction: column;
+  }
 }

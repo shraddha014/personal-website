@@ -6,9 +6,10 @@
 }
 
 .conatinerSize {
-  width: calc(10em + 15vw);
+  width: calc(7em + 24vw);
   height: calc(15vh + 25em);
   border-radius: 12px;
+  max-width: 412px;
 }
 
 .background {

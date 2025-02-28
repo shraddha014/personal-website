@@ -1,6 +1,5 @@
 .menu {
     display: flex;
-    /* height: 8vh; */
     margin: 0 auto;
     z-index: 1;
     max-width: 100%;
@@ -11,7 +10,7 @@
     padding: 0;
 }
 
-.links{
+.links {
     font-weight: 400;
     color: var(--link-color);
     margin: 0 1rem;
@@ -22,35 +21,114 @@
 .links:hover {
     opacity: 100%;
 }
-  
+
 
 .active {
-    position: relative;      
+    position: relative;
     display: inline-block;
     text-decoration: none;
     opacity: 100%;
 }
-  
+
 .active::after {
     content: "";
     position: absolute;
-    left: 50%;               
-    transform: translateX(-50%); 
-    bottom: 4px;        
-    width: 40%;              
-    height: 2px;            
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4px;
+    width: 40%;
+    height: 2px;
     background-color: var(--link-underline-color);
 }
-  
+
 .active:hover::after {
-    width: 60%;        
+    width: 60%;
     transition: width 0.2s ease;
 }
 
-@media (max-width: 768px) {
-    .menu {
-      width: 100%;
+.navWrapper {
+    position: fixed;
+    top: -2.5vh;
+    padding: 5vh 5px 1vh 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: var(--pale-yellow);
+    width: 100%;
+    z-index: 1000;
+}
+
+.navContainer {
+    width: 90%;
+    margin: auto;
+    max-width: var(--max-width);
+    padding: 0 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.logo {
+    height: 22px;
+}
+
+.navLinksWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2.1vw;
+}
+
+.navLink {
+    color: var(--text-grey);
+    font-size: 0.975rem;
+}
+
+.active {
+    color: var(--text-yellow);
+}
+
+.navLink:hover {
+    color: var(--tertiary-golden);
+}
+
+.active:hover {
+    color: var(--primary-yellow);
+}
+
+.thirteen {
+    display: flex;
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--pure-white);
+    background-color: var(--blackish-grey);
+    padding: 10px 15px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.hideInMobile {
+    padding-right: 0;
+}
+
+.downloadIcon{
+    padding: 0;
+    height: 0.85rem;
+}
+
+/* Mobiles */
+@media (max-width: 788px) {
+    .hideInMobile {
+        display: none;
     }
+    .menu {
+        width: 100%;
+    }
+
     .links {
         margin: 0;
     }

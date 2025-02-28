@@ -28,10 +28,8 @@
   justify-content: center;
   flex: 1;
   gap: 2vw;
-
-  flex-direction: row;
-
-  padding-top: 5vh;
+  padding-top: 8vh;
+  /* align-items: baseline; */
 }
 
 .name {
@@ -42,7 +40,7 @@
   align-content: flex-start;
   font-size: calc(2em + 0.72vw + 1vh);
   font-weight: 600;
-  margin-top: -1%;
+  margin-top: -2%;
 }
 
 .description {
@@ -75,7 +73,7 @@
   height: auto;
   position: fixed;
   /* bottom: 7vh; */
-  bottom: calc(7vh - (900px - 100vh) * 0.2);
+  bottom: calc(10vh - (900px - 100vh) * 0.2);
 }
 
 .aboutImageOne {
@@ -83,7 +81,7 @@
   /* width: 39.2vw; */
 
   z-index: 1;
-  left: calc(-3.8vw + (900px - 100vh) * 0.48 - (1920px - 100vw) * 0.1);
+  left: calc(-3.8vw + (900px - 100vh) * 0.48 - (1920px - 100vw) * 0.2);
   transform: rotate(8.4deg);
 }
 
@@ -93,8 +91,8 @@
 
   z-index: 3;
   /* bottom: 5.8vh; */
-  bottom: calc(5.8vh - (900px - 100vh) * 0.2);
-  left: calc(28.5vw+ (900px - 100vh) * 0.18);
+  bottom: calc(8.8vh - (900px - 100vh) * 0.2);
+  left: calc(28vw+ (900px - 100vh) * 0.18 - (1920px - 100vw) * 0.12);
   transform: rotate(-6.9deg);
   /* transform: rotate(calc(-6.9deg + (900px - 100vh) * 0.05deg)); */
 }
@@ -103,14 +101,16 @@
   width: calc(19vw + 39vh);
   /* width: 38vw; */
   z-index: 2;
-  right: calc(-3vw + (900px - 100vh) * 0.48 - (1920px - 100vw) * 0.1);
+  right: calc(-4.9vw + (900px - 100vh) * 0.48 - (1920px - 100vw) * 0.12);
   transform: rotate(+6.3deg);
 }
 
 @media (max-width: 768px) {
   .headingContainer {
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+    padding-top: 0;
   }
 }

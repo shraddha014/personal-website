@@ -24,17 +24,17 @@ export default function Home() {
 
       <img
         className={styles.aboutImageOne}
-        src="/assests/about-one.png"
+        src="/assests/aboutcenterpic.png"
         alt="Shradda's image dancing in rain"
       />
       <img
         className={styles.aboutImageTwo}
-        src="/assests/about-two.png"
+        src="/assests/aboutsidepic1.png"
         alt="Shradda's image dancing in rain"
       />
       <img
         className={styles.aboutImageThree}
-        src="/assests/about-three.png"
+        src="/assests/aboutsidepic2.png"
         alt="Shradda's image dancing in rain"
       />
     </>
