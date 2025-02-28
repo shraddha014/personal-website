@@ -1,0 +1,13 @@
+.conatiner {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+@media (max-width: 568px) {
+    .conatiner {
+        flex-direction: column;
+    }
+}

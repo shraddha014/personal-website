@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./header";
 import { neue } from "@/utils/fontConfig";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -27,11 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${neue.className}`}>
-        <Header />
-        <div className="parent">{children}</div>
-        <div className="footer">
-          Built with&nbsp;<span>React</span>&nbsp;by&nbsp;<span>Shraddha</span>
+      <body className={`${neue.className}`}>
+      {/* <body className={`${geistSans.variable} ${geistMono.variable} ${neue.className}`}> */}
+        <div className="main">
+          <Header />
+          <div className="mainContainer">{children}</div>
+          <div className="footer">
+            Built with&nbsp;<span>React</span>&nbsp;by&nbsp;<span>Shraddha</span>
+          </div>
         </div>
       </body>
     </html>
