@@ -119,7 +119,7 @@ function BouncingSkillsWrapper({ languages }: TagSimulationProps) {
     }
 
 
-    const ground = Bodies.rectangle(width / 2, height - 105, width, 0.1, { isStatic: true, friction: 10, render: { visible: false } });
+    const ground = Bodies.rectangle(width / 2, height *0.87, width, 0.1, { isStatic: true, friction: 10, render: { visible: false } });
     const rightWall = Bodies.rectangle(width - 100, height / 2, 20, height, { isStatic: true, friction: 10, render: { visible: false } })
     const leftWall = Bodies.rectangle(0, height / 2, 20, height, { isStatic: true, friction: 10, render: { visible: false } });
     const topWall = Bodies.rectangle(width / 2, 0, width, 20, {
