@@ -7,10 +7,10 @@
 }
 
 .groupedImage {
-  width:108vw;
+  width: 108vw;
   position: absolute;
   left: -4%;
-  bottom:0%;
+  bottom: 0%;
 }
 
 .mainHeading {
@@ -19,39 +19,44 @@
   justify-content: center;
   width: 100%;
   padding-bottom: 0;
+
+  height: 100%;
 }
 
 .headingContainer {
-  display: flex
-;
-    justify-content: center;
-    flex: 1;
-    gap: 10rem;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 2vw;
+
+  flex-direction: row;
+
+  padding-top: 5vh;
 }
 
 .name {
   display: flex;
   flex-direction: column;
-  font-size: calc(2em + 1vw);
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  font-size: calc(2em + 0.72vw + 1vh);
   font-weight: 600;
+  margin-top: -1%;
 }
 
 .description {
   max-width: 30rem;
-  font-size: calc(1em + 1vw);
+  font-size: calc(0.625em + 1vh + 0.5vw);
   font-weight: 500;
-    line-height: normal;
-    width: 100%;
+  line-height: normal;
+  width: 100%;
 }
 
 .dot {
   color: var(--dot);
   font-family: "auto";
   padding: 0;
-}
-
-.imageContainer {
-  height: 35vh;
 }
 
 .nameFirstPara {
@@ -62,6 +67,44 @@
 .nameSecondPara {
   padding-top: 0px;
   margin-top: -12px;
+}
+
+.aboutImageOne,
+.aboutImageTwo,
+.aboutImageThree {
+  height: auto;
+  position: fixed;
+  /* bottom: 7vh; */
+  bottom: calc(7vh - (900px - 100vh) * 0.2);
+}
+
+.aboutImageOne {
+  width: calc(20.25vw + 39vh);
+  /* width: 39.2vw; */
+
+  z-index: 1;
+  left: calc(-3.8vw + (900px - 100vh) * 0.48 - (1920px - 100vw) * 0.1);
+  transform: rotate(8.4deg);
+}
+
+.aboutImageTwo {
+  width: calc(24vw + 39vh);
+  /* width: 43vw; */
+
+  z-index: 3;
+  /* bottom: 5.8vh; */
+  bottom: calc(5.8vh - (900px - 100vh) * 0.2);
+  left: calc(28.5vw+ (900px - 100vh) * 0.18);
+  transform: rotate(-6.9deg);
+  /* transform: rotate(calc(-6.9deg + (900px - 100vh) * 0.05deg)); */
+}
+
+.aboutImageThree {
+  width: calc(19vw + 39vh);
+  /* width: 38vw; */
+  z-index: 2;
+  right: calc(-3vw + (900px - 100vh) * 0.48 - (1920px - 100vw) * 0.1);
+  transform: rotate(+6.3deg);
 }
 
 @media (max-width: 768px) {
