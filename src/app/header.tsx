@@ -68,7 +68,7 @@ export default function Header() {
         </div>
         <a
           className={styles.thirteen}
-          href="/assests/Shraddha.pdf"
+          href="/assests/Shraddha_Resume_Software.pdf"
           download="Shraddha.pdf"
         >
           <span className={styles.hideInMobile}>Download&nbsp;</span>
