@@ -14,11 +14,7 @@ interface LanguageColor {
   height: number;
 }
 
-interface TagSimulationProps {
-  languages: LanguageColor[]; // Accepts an array of { name, color }
-}
-
-function TagSimulation({ languages }: TagSimulationProps) {
+function TagSimulation(languages : LanguageColor[]) {
   const sceneRef = useRef<HTMLDivElement | null>(null);
   const engineRef = useRef(Engine.create());
   const text = "Software Developer Skills.!!!";
