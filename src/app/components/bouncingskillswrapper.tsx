@@ -82,29 +82,20 @@ function BouncingSkillsWrapper({ languages }: TagSimulationProps) {
         render: { visible: false },
       },
     });
-    const radius = 20;
-
     const rectangles = []
 
     let xOffset = 50; // Start x position
-    let yOffset = 50; // Start y position
     const paddingX = 20; // Horizontal space between elements
-    const paddingY = 15; // Vertical space between rows
-    const maxRowWidth = width - 50; // Max width before wrapping
     const rowHeight = 72; // Fixed height of each row
-    const dropRandomness = 55; // Small randomness to avoid uniform drop
 
     for (let i = 0; i < languages.length; i++) {
       const language = languages[i];
 
       const rectWidth = language.excessiveWidth || 100;
-
-      if (xOffset + rectWidth > maxRowWidth) {
-        yOffset += rowHeight + paddingY;
-      }
+      
       const tagWhitelevel = Bodies.rectangle(
-        Math.max(20, (Math.random() * innerWidth) - rectWidth),
-        yOffset + rowHeight / 2 + Math.random() * dropRandomness,
+        Math.max(rectWidth+10, (Math.random() * innerWidth) - rectWidth),
+        Math.max(rowHeight+10,250 * Math.random()),
         rectWidth,
         rowHeight,
         {
