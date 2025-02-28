@@ -91,7 +91,7 @@ let yOffset = 50; // Start y position
 const paddingX = 20; // Horizontal space between elements
 const paddingY = 15; // Vertical space between rows
 const maxRowWidth = width - 50; // Max width before wrapping
-const rowHeight = 71; // Fixed height of each row
+const rowHeight = 72; // Fixed height of each row
 const dropRandomness = 5; // Small randomness to avoid uniform drop
 
 for (let i = 0; i < languages.length; i++) {
