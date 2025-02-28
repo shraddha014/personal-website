@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { Engine, Render, World, Bodies, Runner, Mouse, MouseConstraint } from "matter-js";
 import styles from "./skillseffect.module.css";
 import { neue } from "@/utils/fontConfig";
-// import { LanguageColor } from "@/utils/languages";
+import { LanguageColor } from "@/utils/languages";
 
-// type TagSimulationProps={
-//   languages:LanguageColor[]
-// }
+type TagSimulationProps={
+  languages:LanguageColor[]
+}
 
-function TagSimulation({languages} : any) {
+function BouncingSkillsWrapper({languages} : TagSimulationProps) {
   const sceneRef = useRef<HTMLDivElement | null>(null);
   const engineRef = useRef(Engine.create());
   const text = "Software Developer Skills.!!!";
@@ -167,4 +167,4 @@ for (let i = 0; i < languages.length; i++) {
   );
 }
 
-export default TagSimulation;
+export default BouncingSkillsWrapper;

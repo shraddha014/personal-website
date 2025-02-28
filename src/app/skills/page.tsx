@@ -1,5 +1,5 @@
 import { LanguageColor } from "@/utils/languages";
-import TagSimulation from "../matterjs/page";
+import BouncingSkillsWrapper from "../components/bouncingskillswrapper";
 
 export default function Skills() { 
     const languages: LanguageColor[] = [
@@ -153,6 +153,6 @@ export default function Skills() {
     ];
     
     return (
-        <TagSimulation languages={languages}/>
+        <BouncingSkillsWrapper languages={languages}/>
     );
  }
