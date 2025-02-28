@@ -6,11 +6,11 @@ import styles from "./skillseffect.module.css";
 import { neue } from "@/utils/fontConfig";
 import { LanguageColor } from "@/utils/languages";
 
-type TagSimulationProps={
-  languages:LanguageColor[]
+type TagSimulationProps = {
+  languages: LanguageColor[]
 }
 
-function BouncingSkillsWrapper({languages} : TagSimulationProps) {
+function BouncingSkillsWrapper({ languages }: TagSimulationProps) {
   const sceneRef = useRef<HTMLDivElement | null>(null);
   const engineRef = useRef(Engine.create());
   const text = "Software Developer Skills.!!!";
@@ -68,7 +68,7 @@ function BouncingSkillsWrapper({languages} : TagSimulationProps) {
         background: '#f1f1f0'
       },
     });
-    
+
     Render.setPixelRatio(render, window.devicePixelRatio || 1);
 
     const ctx = render.context;
@@ -85,62 +85,57 @@ function BouncingSkillsWrapper({languages} : TagSimulationProps) {
     const radius = 20;
 
     const rectangles = []
-    
+
     let xOffset = 50; // Start x position
-let yOffset = 50; // Start y position
-const paddingX = 20; // Horizontal space between elements
-const paddingY = 15; // Vertical space between rows
-const maxRowWidth = width - 50; // Max width before wrapping
-const rowHeight = 72; // Fixed height of each row
-const dropRandomness = 5; // Small randomness to avoid uniform drop
+    let yOffset = 50; // Start y position
+    const paddingX = 20; // Horizontal space between elements
+    const paddingY = 15; // Vertical space between rows
+    const maxRowWidth = width - 50; // Max width before wrapping
+    const rowHeight = 72; // Fixed height of each row
+    const dropRandomness = 55; // Small randomness to avoid uniform drop
 
-for (let i = 0; i < languages.length; i++) {
-    const language = languages[i];
+    for (let i = 0; i < languages.length; i++) {
+      const language = languages[i];
 
-    // Ensure each language object has a valid width
-    const rectWidth = language.excessiveWidth || 100; // Default to 100 if not defined
+      const rectWidth = language.excessiveWidth || 100;
 
-    // Check if adding this rectangle exceeds the max row width, move to a new row
-    if (xOffset + rectWidth > maxRowWidth) {
-        xOffset = 50; // Reset x to the start of the row
-        yOffset += rowHeight + paddingY; // Move to the next row
-    }
-
-    // Create rectangle with slight randomness for smoother physics dropping
-    const tagWhitelevel = Bodies.rectangle(
-        xOffset + rectWidth / 2 + Math.random() * dropRandomness, // Adjusted center position with randomness
-        yOffset + rowHeight / 2 + Math.random() * dropRandomness, // Adjusted to prevent overlap
+      if (xOffset + rectWidth > maxRowWidth) {
+        yOffset += rowHeight + paddingY;
+      }
+      const tagWhitelevel = Bodies.rectangle(
+        Math.max(20, (Math.random() * innerWidth) - rectWidth),
+        yOffset + rowHeight / 2 + Math.random() * dropRandomness,
         rectWidth,
         rowHeight,
         {
-            restitution: 0.8, // Adds a bouncy effect
-            friction: 0.5, // Adds natural friction
-            chamfer: { radius: 8 }, // Optional rounding
-            render: {
-                sprite: {
-                    texture: language.name,
-                    xScale: 1,
-                    yScale: 1
-                }
+          restitution: 0.8,
+          friction: 0.5,
+          chamfer: { radius: 8 },
+          render: {
+            sprite: {
+              texture: language.name,
+              xScale: 1,
+              yScale: 1
             }
+          }
         }
-    );
+      );
 
-    rectangles.push(tagWhitelevel);
+      rectangles.push(tagWhitelevel);
 
-    // Move x position for next rectangle
-    xOffset += rectWidth + paddingX;
-}
+      // Move x position for next rectangle
+      xOffset += rectWidth + paddingX;
+    }
 
 
     const ground = Bodies.rectangle(width / 2, height - 105, width, 0.1, { isStatic: true, friction: 10, render: { visible: false } });
-    const rightWall = Bodies.rectangle(width-100, height/2, 20, height, { isStatic: true, friction: 10, render: { visible: false } })
-    const leftWall = Bodies.rectangle(0, height/2, 20, height, { isStatic: true, friction: 10, render: { visible: false }  });
-    const topWall = Bodies.rectangle(width / 2, 0, width, 20, { 
-      isStatic: true, 
-      friction: 10, 
-      render: { visible: false } 
-  });
+    const rightWall = Bodies.rectangle(width - 100, height / 2, 20, height, { isStatic: true, friction: 10, render: { visible: false } })
+    const leftWall = Bodies.rectangle(0, height / 2, 20, height, { isStatic: true, friction: 10, render: { visible: false } });
+    const topWall = Bodies.rectangle(width / 2, 0, width, 20, {
+      isStatic: true,
+      friction: 10,
+      render: { visible: false }
+    });
 
     // Add all objects to the physics world
     World.add(engine.world, [...rectangles, ground, topWall, rightWall, leftWall, mouseConstraint]);
@@ -159,7 +154,7 @@ for (let i = 0; i < languages.length; i++) {
 
   return (
     <div className={styles.container}>
-      <div style={{fontWeight: 800}} className={`${styles.centerDiv} ${neue.className}}`}>
+      <div style={{ fontWeight: 800 }} className={`${styles.centerDiv} ${neue.className}}`}>
         {displayText}
       </div>
       <div ref={sceneRef} className={styles.simulationContainer} />
