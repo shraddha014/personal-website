@@ -2,12 +2,38 @@
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-top: 3rem;
     justify-content: center;
 }
 
-@media (max-width: 568px) {
+.main {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin-top: 1rem;
+    padding-left: 5rem;
+}
+
+.pageTitle{
+    font-size: calc(2.7em + 2.7vw);
+    font-weight: 400; 
+    
+}
+
+.dot {
+    color: var(--dot);
+    font-family: "auto";
+    padding: 0;
+}
+
+@media (max-width: 768px) {
     .conatiner {
         flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1430px) {
+    .main {
+        padding: 0;
     }
 }

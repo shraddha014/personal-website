@@ -1,20 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 
 :root {
   --background: #f1f1f0;
-  --foreground: rgb(38,37,37);
-  --box-backgroud: #392F1E17;
+  --foreground: rgb(38, 37, 37);
+  --box-backgroud: #392f1e17;
   --link-color: #333;
-  --link-underline-color: #D7A765;
+  --link-underline-color: #d7a765;
   --lang-div-background-color: rgba(17, 17, 17, 0.1);
   --land-text-color: rgba(17, 17, 17, 0.8);
   --dot: rgba(225, 173, 100, 1);
   --about-me-hey: rgba(38, 37, 37, 0.7);
   --education-name-heading: rgba(255, 255, 255, 1);
   --education-name-subheading: rgba(255, 255, 255, 0.85);
+  --pure-white: #ffffff;
+  --blackish-grey: #3d3d3d;
+}
+
+* {
+  padding: 0;
 }
 
 html,
@@ -29,13 +33,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
-.main{
+.main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 3rem;
   height: 100vh !important;
 }
 
@@ -64,6 +68,8 @@ next-route-announcer {
   justify-content: center;
   margin-top: -3rem;
   overflow: auto;
+  flex-grow: 1;
+  padding-top: 4.2vh;
 }
 
 .footer {
@@ -78,3 +84,8 @@ next-route-announcer {
   color: rgba(17, 17, 17, 1);
 }
 
+@media (max-width: 768px) {
+  .mainContainer {
+      flex-direction: column;
+  }
+}

@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({ frontContent, backContent }) => {
           initial={{ rotateY: 0 }}
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration: 0.6 }}
-          style={{ perspective: "1000px" }}
+          style={{ perspective: "1000px", padding: 0 }}
         >
           {!flipped ? (
             <div className={`${styles.background} ${styles.conatinerSize}`} style={{backgroundImage: `url(${frontContent.firstImage})`}}>
