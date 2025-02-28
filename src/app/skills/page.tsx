@@ -6,105 +6,147 @@ export default function Skills() {
         <TagSimulation
   languages={[
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47541d38f6886e5747c1d_uiux.svg", 
+      name: "/assests/skills/Group 70.svg", 
       x: 150, 
       y: 500, 
       excessiveWidth: 164, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540055ab00edffa0a68_wordpress.svg", 
+      name: "/assests/skills/Group 73.svg", 
       x: 150, 
       y: 460, 
       excessiveWidth: 240, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f475405a7c8ff69c27ed37_webflow.svg", 
+      name: "/assests/skills/Group 74.svg", 
       x: 250, 
       y: 420, 
       excessiveWidth: 200, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540c9a2047edbb293d1_whitelevel.svg", 
+      name: "/assests/skills/Group 93.svg", 
       x: 75, 
       y: 380, 
       excessiveWidth: 160, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540487abf2c397d777f_webflow-green.svg", 
+      name: "/assests/skills/Group 110.svg", 
       x: 74, 
       y: 540, 
       excessiveWidth: 248, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f475407ebe06e52f9283d1_sass.svg", 
+      name: "/assests/skills/Group 122.svg", 
       x: 174, 
       y: 490, 
       excessiveWidth: 105, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540f762b61424410849_web.svg", 
+      name: "/assests/skills/Group 117.svg", 
       x: 142, 
       y: 440, 
       excessiveWidth: 186, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f475402ae28c15adeba62f_startup.svg", 
+      name: "/assests/skills/Group 116.svg", 
       x: 10, 
       y: 260, 
       excessiveWidth: 128, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540f86ad4f4175a1e69_maintence.svg", 
+      name: "/assests/skills/Group 113.svg", 
       x: 242, 
       y: 420, 
       excessiveWidth: 168, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540035d9b03fc33e447_integration.svg", 
+      name: "/assests/skills/Group 112.svg", 
       x: 60, 
       y: 380, 
       excessiveWidth: 155, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f475405a7c8ff69c27ed00_motion.svg", 
+      name: "/assests/skills/Group 109.svg", 
       x: 0, 
       y: 360, 
       excessiveWidth: 180, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f475406ef461a95eaa0f12_pay.svg", 
+      name: "/assests/skills/Group 108.svg", 
       x: 59, 
       y: 260, 
       excessiveWidth: 172, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540f86ad4f4175a1df1_gsap.svg", 
+      name: "/assests/skills/Group 107.svg", 
       x: 59, 
       y: 260, 
       excessiveWidth: 115, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f475407a05afc618131310_figma.svg", 
+      name: "/assests/skills/Group 106.svg", 
       x: 59, 
       y: 260, 
       excessiveWidth: 210, 
       height: 56 
     },
     { 
-      name: "https://uploads-ssl.webflow.com/64f41ea3b31af27272713c03/64f47540bfb0eee6858d556a_migration.svg", 
+      name: "/assests/skills/Group 105.svg", 
+      x: 59, 
+      y: 260, 
+      excessiveWidth: 145, 
+      height: 56 
+    },
+    { 
+      name: "/assests/skills/Group 104.svg", 
+      x: 59, 
+      y: 260, 
+      excessiveWidth: 145, 
+      height: 56 
+    },
+    { 
+      name: "/assests/skills/Group 103.svg", 
+      x: 59, 
+      y: 260, 
+      excessiveWidth: 145, 
+      height: 56 
+    },
+    { 
+      name: "/assests/skills/Group 102.svg", 
+      x: 59, 
+      y: 260, 
+      excessiveWidth: 145, 
+      height: 56 
+    },
+    { 
+      name: "/assests/skills/Group 101.svg", 
+      x: 59, 
+      y: 260, 
+      excessiveWidth: 145, 
+      height: 56 
+    },
+    { 
+      name: "/assests/skills/Group 97.svg", 
+      x: 59, 
+      y: 260, 
+      excessiveWidth: 145, 
+      height: 56 
+    },
+    { 
+      name: "/assests/skills/Group 94.svg", 
       x: 59, 
       y: 260, 
       excessiveWidth: 145, 

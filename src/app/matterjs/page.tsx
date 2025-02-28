@@ -21,7 +21,7 @@ interface TagSimulationProps {
 function TagSimulation({ languages }: TagSimulationProps) {
   const sceneRef = useRef<HTMLDivElement | null>(null);
   const engineRef = useRef(Engine.create());
-  const text = "Software Developer Skills!!!!";
+  const text = "Software Developer Skills.!!!";
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
@@ -77,6 +77,11 @@ function TagSimulation({ languages }: TagSimulationProps) {
       },
     });
     
+    Render.setPixelRatio(render, window.devicePixelRatio || 1);
+
+    const ctx = render.context;
+    ctx.imageSmoothingEnabled = false;
+
     const mouse = Mouse.create(render.canvas);
     const mouseConstraint = MouseConstraint.create(engine, {
       mouse: mouse,
@@ -89,28 +94,64 @@ function TagSimulation({ languages }: TagSimulationProps) {
 
     const rectangles = []
     
-    for (let i = 0; i < languages.length; i++) {
-      const language = languages[i]
-      const tagWhitelevel = Bodies.rectangle(width / 2 - language.x, language.y, language.excessiveWidth, language.height, {
-          chamfer: { radius: radius },
-          render: {
-              sprite: {
-                  texture: language.name,
-                  xScale: 1,
-                  yScale: 1
-              }
-          }
-      });
-  
-      rectangles.push(tagWhitelevel);
-  }
+    let xOffset = 50; // Start x position
+let yOffset = 50; // Start y position
+const paddingX = 20; // Horizontal space between elements
+const paddingY = 15; // Vertical space between rows
+const maxRowWidth = width - 50; // Max width before wrapping
+const rowHeight = 71; // Fixed height of each row
+const dropRandomness = 5; // Small randomness to avoid uniform drop
 
-    const ground = Bodies.rectangle(width / 2, height - 105, width, 1, { isStatic: true, friction: 10 });
-    const rightWall = Bodies.rectangle(width+10, height/2, 20, height, { isStatic: true, friction: 10 })
-    const leftWall = Bodies.rectangle(-12, height/2, 20, height, { isStatic: true, friction: 10 })
+for (let i = 0; i < languages.length; i++) {
+    const language = languages[i];
+
+    // Ensure each language object has a valid width
+    const rectWidth = language.excessiveWidth || 100; // Default to 100 if not defined
+
+    // Check if adding this rectangle exceeds the max row width, move to a new row
+    if (xOffset + rectWidth > maxRowWidth) {
+        xOffset = 50; // Reset x to the start of the row
+        yOffset += rowHeight + paddingY; // Move to the next row
+    }
+
+    // Create rectangle with slight randomness for smoother physics dropping
+    const tagWhitelevel = Bodies.rectangle(
+        xOffset + rectWidth / 2 + Math.random() * dropRandomness, // Adjusted center position with randomness
+        yOffset + rowHeight / 2 + Math.random() * dropRandomness, // Adjusted to prevent overlap
+        rectWidth,
+        rowHeight,
+        {
+            restitution: 0.8, // Adds a bouncy effect
+            friction: 0.5, // Adds natural friction
+            chamfer: { radius: 8 }, // Optional rounding
+            render: {
+                sprite: {
+                    texture: language.name,
+                    xScale: 1,
+                    yScale: 1
+                }
+            }
+        }
+    );
+
+    rectangles.push(tagWhitelevel);
+
+    // Move x position for next rectangle
+    xOffset += rectWidth + paddingX;
+}
+
+
+    const ground = Bodies.rectangle(width / 2, height - 105, width, 0.1, { isStatic: true, friction: 10, render: { visible: false } });
+    const rightWall = Bodies.rectangle(width-100, height/2, 20, height, { isStatic: true, friction: 10, render: { visible: false } })
+    const leftWall = Bodies.rectangle(0, height/2, 20, height, { isStatic: true, friction: 10, render: { visible: false }  });
+    const topWall = Bodies.rectangle(width / 2, 0, width, 20, { 
+      isStatic: true, 
+      friction: 10, 
+      render: { visible: false } 
+  });
 
     // Add all objects to the physics world
-    World.add(engine.world, [...rectangles, ground, rightWall, leftWall, mouseConstraint]);
+    World.add(engine.world, [...rectangles, ground, topWall, rightWall, leftWall, mouseConstraint]);
 
     // Run engine and renderer
     const runner = Runner.create();
