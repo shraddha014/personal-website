@@ -1,7 +1,8 @@
+import { LanguageColor } from "@/utils/languages";
 import TagSimulation from "../matterjs/page";
 
 export default function Skills() { 
-    const languages = [
+    const languages: LanguageColor[] = [
       { 
         name: "/assests/skills/Group 70.svg", 
         x: 150, 
@@ -149,7 +150,7 @@ export default function Skills() {
         excessiveWidth: 145, 
         height: 56 
       }
-    ]
+    ];
     
     return (
         <TagSimulation languages={languages}/>

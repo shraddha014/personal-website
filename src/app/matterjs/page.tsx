@@ -4,17 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { Engine, Render, World, Bodies, Runner, Mouse, MouseConstraint } from "matter-js";
 import styles from "./skillseffect.module.css";
 import { neue } from "@/utils/fontConfig";
+import { LanguageColor } from "@/utils/languages";
 
-// Define props type
-interface LanguageColor {
-  name: string;
-  x: number;
-  y: number;
-  excessiveWidth: number;
-  height: number;
+type TagSimulationProps={
+  languages:LanguageColor[]
 }
 
-function TagSimulation(languages : LanguageColor[]) {
+function TagSimulation({languages} : TagSimulationProps) {
   const sceneRef = useRef<HTMLDivElement | null>(null);
   const engineRef = useRef(Engine.create());
   const text = "Software Developer Skills.!!!";
