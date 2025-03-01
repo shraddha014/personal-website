@@ -10,6 +10,7 @@
   height: calc(15vh + 25em);
   border-radius: 12px;
   max-width: 412px;
+  min-width: 320px;
 }
 
 .background {

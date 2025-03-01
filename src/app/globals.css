@@ -70,6 +70,7 @@ next-route-announcer {
   overflow: auto;
   flex-grow: 1;
   padding-top: 8vh;
+  height: 80vh;
 }
 
 .footer {
