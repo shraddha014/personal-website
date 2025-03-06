@@ -88,5 +88,6 @@ next-route-announcer {
 @media (max-width: 768px) {
   .mainContainer {
       flex-direction: column;
+      overflow: auto;
   }
 }
