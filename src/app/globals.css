@@ -67,7 +67,7 @@ next-route-announcer {
   display: flex;
   justify-content: center;
   margin-top: -3rem;
-  overflow: auto;
+  overflow: hidden;
   flex-grow: 1;
   padding-top: 8vh;
   height: 80vh;
