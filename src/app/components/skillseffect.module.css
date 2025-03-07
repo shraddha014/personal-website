@@ -25,3 +25,9 @@
   letter-spacing: 2px;
 }
 
+@media (width<786) {
+  .container {
+    overflow: hidden;
+  }
+}
+
