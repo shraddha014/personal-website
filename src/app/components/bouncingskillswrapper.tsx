@@ -55,7 +55,7 @@ function BouncingSkillsWrapper({ languages }: TagSimulationProps) {
     if (!sceneRef.current) return;
 
     const width = window.innerWidth;
-    const height = window.innerHeight*0.8;
+    const height = window.innerHeight;
 
     const engine = engineRef.current;
     const render = Render.create({
@@ -69,10 +69,10 @@ function BouncingSkillsWrapper({ languages }: TagSimulationProps) {
       },
     });
 
-    render.canvas.style.position = "absolute";
-    render.canvas.style.top = "50%";
-    render.canvas.style.left = "50%";
-    render.canvas.style.transform = "translate(-50%, -50%)";
+    // render.canvas.style.position = "absolute";
+    // render.canvas.style.top = "50%";
+    // render.canvas.style.left = "50%";
+    // render.canvas.style.transform = "translate(-50%, -50%)";
 
     Render.setPixelRatio(render, window.devicePixelRatio || 1);
 
@@ -145,7 +145,7 @@ function BouncingSkillsWrapper({ languages }: TagSimulationProps) {
     }
 
 
-    const ground = Bodies.rectangle(width / 2, height * 0.87, width, 0.1, { isStatic: true, friction: 10, render: { visible: false } });
+    const ground = Bodies.rectangle(width / 2, height * 0.87, width, 0.1, { isStatic: true, friction: 10, render: { visible: false } });    
     const rightWall = Bodies.rectangle(width - 100, height / 2, 20, height, { isStatic: true, friction: 10, render: { visible: false } })
     const leftWall = Bodies.rectangle(0, height / 2, 20, height, { isStatic: true, friction: 10, render: { visible: false } });
     const topWall = Bodies.rectangle(width / 2, 0, width, 20, {
