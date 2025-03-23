@@ -41,12 +41,6 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="/experience"
-              className={`${getLinkClassName('/experience')}  ${neue.className}`}
-            >
-              Experience
-            </Link>
-            <Link
               href="/education"
               className={`${getLinkClassName('/education')}  ${neue.className}`}
             >
@@ -63,6 +57,12 @@ export default function Header() {
               className={`${getLinkClassName('/skills')}  ${neue.className}`}
             >
               Skills
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/beshraddha/" target="_blank" rel="noopener noreferrer"
+              className={`${getLinkClassName('/experience')}  ${neue.className}`}
+            >
+              LinkedIn
             </Link>
           </div>
         </div>
