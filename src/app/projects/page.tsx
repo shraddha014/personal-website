@@ -12,15 +12,24 @@ interface projectItem {
 
 const projectItems: projectItem[] = [
   {
-    heading: "Pretty Wiki",
-    link: "https://github.com/hi-mark/pretty-wiki",
+    heading: "Smarter Recipe Finder Using Vectors",
+    link: "https://medium.com/@ms.shraddha14/%EF%B8%8F-tired-of-keyword-search-heres-how-i-built-a-smarter-recipe-finder-with-vectors-84ce225e9e46",
     description:
-      `Implementing customizable themes, font styles, and layout optimizations 
-      to enhance Wikipedia's content readability and aesthetic appeal.`,
-    languageUsed: ["Typescript", "HTML", "CSS"],
+      `Semantic recipe search engine that goes beyond traditional keyword search by utilizing vector search. The system allows users to query recipes based on meaning and context, rather than just relying on exact word matches. This results in a more intuitive search experience for finding recipes.`,
+    languageUsed: ["Python", "Flask", "Qdrant", "Embedding model"],
     backgroundImage: "/assests/one.png",
     showLink: true
   },
+  // {
+  //   heading: "Pretty Wiki",
+  //   link: "https://github.com/hi-mark/pretty-wiki",
+  //   description:
+  //     `Implementing customizable themes, font styles, and layout optimizations 
+  //     to enhance Wikipedia's content readability and aesthetic appeal.`,
+  //   languageUsed: ["Typescript", "HTML", "CSS"],
+  //   backgroundImage: "/assests/one.png",
+  //   showLink: true
+  // },
   {
     heading: "Hook'em Hardware",
     link: "https://github.com/shraddha014/hook-em-hardware-be",
@@ -36,7 +45,8 @@ const projectItems: projectItem[] = [
     link: "",
     description:
       `Developed a web-based communication gateway between ground stations and pilots, 
-      enabling efficient data exchange and real-time communication.`,
+      enabling efficient data exchange and real-time communication. Along with this, Integrated Okta for secure user authentication, 
+      enhancing access control and reducing unauthorized access risks`,
     languageUsed: ["Angular", "Java", "Spring Boot", "OracleDb"],
     backgroundImage: "/assests/three.png",
     showLink: false
